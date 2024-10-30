@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Guess a Number Between 1 to 10</h2>
+    <input type="text" id="inputnum" placeholder="Enter the Number">
+    <button onclick="guess()">Submit</button>
+    <p id="result"></p>
+
+    <!-- ==================Added Script================= -->
+    <script>
+        let randomnum = Math.floor(Math.random() * 10) + 1;
+        console.log(randomnum);
+        function guess() {
+            let userinput = document.getElementById("inputnum").value;
+                userinput = parseInt(userinput);
+                if (userinput < 1 || userinput > 10) {
+                    alert("Invalid Input");
+                }
+                if (userinput === randomnum) {
+                    document.getElementById("result").innerText = "Good Work";
+                } else {
+                    document.getElementById("result").innerText = "Not matched";
+                }
+        }
+    </script>
+</body>
+</html>
